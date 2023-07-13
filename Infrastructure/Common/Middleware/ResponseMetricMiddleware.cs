@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Http;
 
-namespace Infrastructure.Middleware; 
+namespace Infrastructure.Common.Middleware; 
 
 public class ResponseMetricMiddleware
 {
@@ -16,7 +16,7 @@ public class ResponseMetricMiddleware
     public async Task Invoke(HttpContext httpContext, MetricReporter reporter)
     {
         var path = httpContext.Request.Path.Value;
-            if (path == "/api/metrics")
+            if (path == "/metrics")
         {
             await _request.Invoke(httpContext);
             return;

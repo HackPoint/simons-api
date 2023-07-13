@@ -4,9 +4,6 @@
 - [Installation docs](https://learn.microsoft.com/en-us/dotnet/core/install/)
 
 ## Overview
-This project created to store events of changes state in UI,
-as from this version it's depended on `audit table` in DB.
-
 > Architecture approach was selected `CORQS` event based,
 > with `MediatR` using `Entity Framework` to handle DB inserts.
 

@@ -1,5 +1,11 @@
-namespace Application.ArEvents.Commands.CreateArEvents; 
+using FluentValidation;
 
-public class CreateArEventCommandValidator {
-    
+namespace Application.ArEvents.Commands.CreateArEvents;
+
+public class CreateArEventCommandValidator : AbstractValidator<CreateArEventCommand> {
+    public CreateArEventCommandValidator() {
+        RuleFor(v => v.DebtId)
+            .NotEmpty().WithMessage("DebtId is required");
+        
+    }
 }

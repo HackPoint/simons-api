@@ -1,9 +1,9 @@
-﻿using AutoMapper;
+﻿using Audity.Application.Common.Models;
+using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Audity.Application.Common.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Audity.Application.Common.Mappings;
+namespace Application.Common.Mappings;
 
 public static class MappingExtensions {
     public static Task<PaginatedList<TDestination>> PaginatedListAsync<TDestination>(

@@ -1,13 +1,13 @@
 namespace Infrastructure.Common.Helpers; 
 
-public class EnvironmentHelper {
+public static class EnvironmentHelper {
     public static T GetValue<T>(string key) {
         ArgumentException.ThrowIfNullOrEmpty(key);
 
         string? value = Environment.GetEnvironmentVariable(key);
 
         try {
-            return (T)Convert.ChangeType(value, typeof(T));
+            return (T)Convert.ChangeType(value, typeof(T))!;
         }
         catch (Exception ex) {
             Console.WriteLine($"Error converting environment variable: {ex.Message}");

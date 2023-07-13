@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Application.Interfaces;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
@@ -28,7 +27,7 @@ public class LoggingBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest,
         var response = await next();
         timer.Stop();
         
-        _logger.LogInformation("Audity Request: {Name} {@Request} , total request time:{ElapsedMilliseconds}",
+        _logger.LogInformation("Request: {Name} {@Request} , total request time:{ElapsedMilliseconds}",
             requestName, request, timer.ElapsedMilliseconds);
         return response;
     }
